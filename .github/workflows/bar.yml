@@ -8,4 +8,7 @@ jobs:
     steps:
       - name: Event Information
         run: |
-          echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
+          echo "Event '${{ github.event.action }}'"
+          echo "Repository '${{ github.event.client_payload.GITHUB_REPOSITORY }}'"
+          echo "Commit '${{ github.event.client_payload.GITHUB_SHA }}'"
+          
