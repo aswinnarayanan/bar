@@ -1,0 +1,11 @@
+name: Foo-Bar Action Responder
+
+on: [repository_dispatch]
+
+jobs:
+  foo-bar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event Information
+        run: |
+          echo "Event '${{ github.event.action }}' received from '${{ github.event.client_payload.repository }}'"
