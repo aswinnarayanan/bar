@@ -11,4 +11,8 @@ jobs:
           echo "Event '${{ github.event.action }}'"
           echo "Repository '${{ github.event.client_payload.GITHUB_REPOSITORY }}'"
           echo "Commit '${{ github.event.client_payload.GITHUB_SHA }}'"
-          
+      - name: Clone Repo
+        run: |
+          git clone https://github.com/'${{ github.event.client_payload.GITHUB_REPOSITORY }}'.git
+          cd foo
+          git checkout '${{ github.event.client_payload.GITHUB_SHA }}'
